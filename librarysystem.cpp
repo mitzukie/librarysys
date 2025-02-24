@@ -47,7 +47,7 @@ int menuchoice;
 int condition = 0;
 int condition2 = 0;
 
-while(condition = 0){
+while(condition == 0){
     cout<<"Menu"<<endl;
     cout<<"1 - Add Book"<<endl;
     cout<<"2 - Display Books"<<endl;
@@ -56,8 +56,9 @@ while(condition = 0){
 
 switch(menuchoice){
     case 1:
-        while(condition2 = 0){
+        while(condition2 == 0){
             char addanother = 'y';
+            cin.ignore();
             cout<<"Enter Title: ";
             getline(cin, title);
 
@@ -75,8 +76,11 @@ switch(menuchoice){
             cout<<"Would you like to add another book? (y/n)";
             cin>>addanother;
 
-            if(addanother == 'n' || 'N'){
+            if(addanother == 'n' || addanother == 'N'){
                 condition2 = 1;
+            }
+            else{
+                condition2 = 0;
             }
         }
         break;
